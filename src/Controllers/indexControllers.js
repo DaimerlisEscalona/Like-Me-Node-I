@@ -1,8 +1,4 @@
 const path = require('path');
-//const express = require('express');
-//const app = require('../Routes/indexRoutes');
-//const router = express.Router();
-//const app = express();
 
 const controller = {
     

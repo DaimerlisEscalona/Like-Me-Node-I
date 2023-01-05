@@ -1,49 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
-const controller = {
-    
-    // load: (req, res) => {
+const consultas = require("../Models/consultas.js");
 
-    //     const fileSongs = JSON.parse(fs.readFileSync("./data/repertorio.json", "utf-8"));
 
-    //      res.json(fileSongs);
-    // }
+    consultas.get = async (req, res) => {
 
-    // addSong: (req, res) => {
+        const posts = await showTable();
+        res.json(posts);
+        
+    },
 
-    //     const cancion = req.body;
-    //     const canciones = JSON.parse(fs.readFileSync("./data/repertorio.json"));
+    consultas.post = async (req, res) => {
 
-    //     canciones.push(cancion);
-    //     fs.writeFileSync("./data/repertorio.json", JSON.stringify(canciones));
 
-    //     res.send("Canción agregada con éxito!");
-    // },
+    }
 
-    // editSong: (req, res) => {
-
-    //     const { id } = req.params;
-    //     const cancion = req.body;
-    //     console.log(cancion);
-    //     const canciones = JSON.parse(fs.readFileSync("./data/repertorio.json"));
-    //     const index = canciones.findIndex((p) => p.id == id);
-    //     canciones[index] = cancion;
-    //     fs.writeFileSync("./data/repertorio.json", JSON.stringify(canciones));
-    //     res.send("Canción modificada con éxito");
-
-    // },
-
-    // deleteSong: (req, res) => {
-
-    //     const { id } = req.params;
-    //     const canciones = JSON.parse(fs.readFileSync("./data/repertorio.json"));
-    //     const index = canciones.findIndex((p) => p.id == id);
-    //     canciones.splice(index, 1);
-    //     fs.writeFileSync("./data/repertorio.json", JSON.stringify(canciones));
-    //     res.send("Canción eliminado con éxito");
-    // }
-    
-}
-
-module.exports = controller;
+module.exports = consultas;

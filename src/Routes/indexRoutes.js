@@ -5,7 +5,7 @@ const indexControllers = require('../Controllers/indexControllers.js')
 const postsRoutes = require('./postsRoutes.js')
 
 app.get("/", indexControllers.load);
-app.use('/posts', postsRoutes);
+app.use("/posts", postsRoutes);
 
 
 module.exports = app;

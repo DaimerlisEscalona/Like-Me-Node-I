@@ -4,9 +4,7 @@ const router = express.Router();
 const postsControllers = require('../Controllers/postsControllers.js')
 
 //router.get('/', postsControllers.load)
-// router.post('/', postsControllers.addSong)
-// router.put('/:id', postsControllers.editSong)
-// router.delete('/:id', postsControllers.deleteSong)
-
+router.get("/", postsControllers.showTable)
+router.post("/", postsControllers.saveLog)
 
 module.exports = router;
