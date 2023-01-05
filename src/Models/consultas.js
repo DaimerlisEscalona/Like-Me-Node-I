@@ -10,13 +10,6 @@ const showTable = async () => {
 
 const saveLog = async () => {
 
-   }
-
-   const updatePost = async (id,like) =>{
-      const consulta = `UPDATE posts SET like=$2 where id=$1`;
-      const valores = [id,like];
-      const resultado =await pool.query(consulta,valores)
-      return(resultado);
       
    }
   
