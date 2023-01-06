@@ -14,7 +14,6 @@ consultas.post = async (req, res) => {
     await saveLog(titulo, url, descripcion);
     res.send("El posts se agregó de manera exitosa");
 
-
 }
 
 module.exports = consultas;

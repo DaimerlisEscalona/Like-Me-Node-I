@@ -6,7 +6,7 @@ const controller = {
 
         const route = path.resolve(__dirname, '../Views/index.html');
         res.sendFile(route);
-        //res.sendFile(__dirname,"index.html")
+
     },
     
 }
