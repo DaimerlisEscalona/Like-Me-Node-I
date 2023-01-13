@@ -2,7 +2,7 @@ const pool = require('../DataBase/db')
 
 const showTable = async () => {
 
-   const { rows } = await pool.query("SELECT * FROM posts")
+   const { rows } = await pool.query("SELECT * FROM posts ORDER BY id ASC")
    return rows
 
 };
@@ -16,4 +16,22 @@ const saveLog = async (titulo, img, descripcion) => {
 
 }
 
-module.exports = { showTable, saveLog }
+const modifyLog = async (id) => {
+
+   const modifyQuery = 'UPDATE posts SET likes=likes+1 WHERE id=$1';
+   const values = [id]
+   const resultQuery = await pool.query(modifyQuery, values);
+   return resultQuery;
+
+
+}
+
+const deleteLog = async (id) => {
+
+   const consulta = `DELETE FROM posts WHERE id=$1`;
+   const result = await pool.query(consulta, [id])
+   return (result);
+
+}
+
+module.exports = { showTable, saveLog, modifyLog, deleteLog }
